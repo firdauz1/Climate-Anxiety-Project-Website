@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>The Hidden Geography of AI</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="hero-content fade-in">
+      <p class="eyebrow">AI Infrastructure • Climate Anxiety • Public Accountability</p>
+      <h1>The Hidden Geography of AI</h1>
+      <p class="hero-subtitle">Mapping the physical footprint of data centers and the communities responding to their expansion.</p>
+      <a href="#impact-section" class="hero-button">Explore the Project</a>
+    </div>
+  </header>
+
+  <main>
+    <section id="impact-section" class="impact-section impact-story fade-in">
+      <p class="eyebrow">The Invisible Costs of AI</p>
+      <h2>AI feels weightless, but its impacts are physical.</h2>
+      <p class="impact-intro">Data centers are often discussed through technical language: megawatts, cooling systems, permits, and zoning. But for communities, these impacts can feel personal. Questions about water use, energy demand, land use, air quality, and public transparency can generate feelings of anxiety, uncertainty, distrust, and concern about the future.
+
+Rather than being obstacles to rational decision-making, these emotions can help explain why communities seek information, attend public meetings, organize, and advocate for accountability. By making these concerns visible, this project explores how understanding emotional responses can help transform uncertainty into informed engagement and collective action.
+</p>
+      <div class="impact-grid animated-impact-grid">
+        <div class="impact-card impact-animate"><span class="impact-icon water-icon">💧</span><h3>Water</h3><p>Cooling systems and industrial growth can raise questions about water demand, especially in dry regions.</p></div>
+        <div class="impact-card impact-animate"><span class="impact-icon energy-icon">⚡</span><h3>Energy</h3><p>Large data centers can increase electricity demand and raise concerns about grid strain and utility costs.</p></div>
+        <div class="impact-card impact-animate"><span class="impact-icon air-icon">🏭</span><h3>Air Quality</h3><p>Backup generators or gas turbines can create pollution concerns near already burdened communities.</p></div>
+        <div class="impact-card impact-animate"><span class="impact-icon land-icon">🌾</span><h3>Land Use</h3><p>Large campuses can transform farmland, open space, and areas near homes, schools, parks, or public institutions.</p></div>
+        <div class="impact-card impact-animate"><span class="impact-icon transparency-icon">👁️</span><h3>Transparency</h3><p>Many conflicts are about whether residents had enough information, time, and public input.</p></div>
+      </div>
+    </section>
+
+    <section class="content-section fade-in">
+      <h2>AI is not invisible. It has a geography and real consequences.</h2>
+      <p>The “cloud” is not actually a cloud. It is built from real buildings, real power systems, real water demands, and real local decisions. The maps below show two sides of this issue: the national data center footprint and the communities responding to that expansion.</p>
+    </section>
+
+    <section id="footprint-map-section" class="map-section fade-in">
+      <div class="map-intro"><h2>U.S. Data Center Footprint</h2><p>This map uses the FracTracker feature service to show data center facilities across the United States. Data is updated as of October 2025.Filter by development status.</p></div>
+      <div class="filter-panel" id="statusFilters">
+        <button class="filter-btn active" data-status="all">All</button>
+        <button class="filter-btn" data-status="Operating">Operating</button>
+        <button class="filter-btn" data-status="Proposed">Proposed</button>
+        <button class="filter-btn" data-status="Approved/Permitted">Approved / Permitted</button>
+        <button class="filter-btn" data-status="Suspended">Suspended</button>
+        <button class="filter-btn" data-status="Cancelled">Cancelled</button>
+        <button class="filter-btn" data-status="Unknown">Unknown</button>
+      </div>
+      <div id="footprintMap"></div>
+      <div class="legend"><h3>Status Legend</h3><p><span class="dot operating"></span> Operating</p><p><span class="dot proposed"></span> Proposed</p><p><span class="dot approved"></span> Approved / Permitted</p><p><span class="dot suspended"></span> Suspended</p><p><span class="dot cancelled"></span> Cancelled</p><p><span class="dot unknown"></span> Unknown</p></div>
+      <div class="map-source">
+  <strong>Data Source:</strong>
+  <a href="https://cdn.arcgis.com/home/item.html?id=9a88f3e93b644d1b97a0c626e16c1fa6"
+     target="_blank"
+     rel="noopener noreferrer">
+     ArcGIS Online Feature Layer
+  </a>
+</div>
+    </section>
+
+    <section id="community-map-section" class="map-section fade-in">
+      <div class="map-intro"><h2>Community Responses Across America</h2><p>This map shows selected community responses to data center expansion. Filter by issue type. Markers use emotion icons.</p></div>
+      <div class="filter-panel" id="issueFilters">
+        <button class="filter-btn active" data-issue="all">All</button>
+        <button class="filter-btn" data-issue="Water">Water</button>
+        <button class="filter-btn" data-issue="Energy">Energy</button>
+        <button class="filter-btn" data-issue="Air Quality">Air Quality</button>
+        <button class="filter-btn" data-issue="Land Use">Land Use</button>
+        <button class="filter-btn" data-issue="Transparency">Transparency</button>
+      </div>
+      <div id="communityMap"></div>
+      <div class="legend"><h3>Emotion Icons</h3><p><span class="emoji">⚠️</span> Anxiety</p><p><span class="emoji">❓</span> Concern</p><p><span class="emoji">👁️</span> Distrust</p><p><span class="emoji">🔥</span> Anger</p><p><span class="emoji">✊</span> Agency / Public Action</p></div>
+    </section>
+
+    <section class="voices-section fade-in">
+      <h2>Voices from Communities</h2>
+      <div class="voice-grid">
+        <article class="voice-card"><p class="voice-place">📍 Nashville, Tennessee</p><p class="voice-quote">“We have some of the most delicate and rarest animals in the world.”</p><p class="voice-source">— Rick Schwartz, CEO of the Nashville Zoo, expressing concerns that a proposed data center development near the zoo could disrupt sensitive animal habitats through noise, lighting, and other environmental impacts.</p><p class="voice-context"><a href="https://www.newschannel5.com/news/nashville-zoo-fights-proposed-data-center-next-door-citing-risks-to-rare-animals" target="_blank" rel="noopener noreferrer">Source to review</a></article>
+        <article class="voice-card quote-placeholder"><p class="voice-place">📍 Utah / Stratos</p><p class="voice-quote">“At a time when the Great Salt Lake is already in crisis, approving a project that will consume water and energy at this scale is irresponsible and dangerous.”</p><p class="voice-source">— Franque Bains, director of Sierra Club's Utah Chapter </p><p class="voice-context"><a href="https://www.theguardian.com/us-news/2026/may/13/utah-approves-datacenter-backlash" target="_blank" rel="noopener noreferrer">Source to review</a></article>
+        <article class="voice-card quote-placeholder"><p class="voice-place">📍 Memphis / xAI</p><p class="voice-quote">“I can’t breathe at home, it smells like gas outside.”</p><p class="voice-source">— Alexis Humphreys, Asthma affected Resident</p><p class="voice-context"><a href="https://www.politico.com/news/2025/05/06/elon-musk-xai-memphis-gas-turbines-air-pollution-permits-00317582" target="_blank" rel="noopener noreferrer">Source to review</a></article>
+        <article class="voice-card quote-placeholder"><p class="voice-place">📍 Virginia / Data Center Alley</p><p class="voice-quote">“The power lines, the growth of the data centers [and] the construction doesn’t stop. It is just ongoing. And I would rather have something more peaceful in my backyard.”</p><p class="voice-source">— Tracy Fowle, 57-year-old Resident</p><p class="voice-context"></p><a href="https://thehill.com/policy/technology/5660972-virginia-data-centers-impact-costs/" target="_blank" rel="noopener noreferrer">Source to review</a></article>
+      </div>
+    </section>
+
+    <section class="case-study fade-in">
+      <p class="eyebrow">Featured Case Study</p><h2>Stratos: When AI Arrives in a Community</h2>
+      <p>The Stratos project in Box Elder County, Utah became a central example of how AI infrastructure can generate environmental concern and public backlash. Residents and advocacy groups raised questions about water, land use, energy demand, transparency, and who gets to participate in decisions that shape the future of a place.</p>
+      <div class="case-grid">
+        <div class="case-card"><h3>💧 Water</h3><p>Community concerns focused on whether large-scale data infrastructure could place additional pressure on water resources in an already sensitive region.</p></div>
+        <div class="case-card"><h3>⚡ Energy</h3><p>The project’s proposed scale raised questions about the energy required to power AI infrastructure and who would bear the costs.</p></div>
+        <div class="case-card"><h3>👥 Public Process</h3><p>Residents questioned whether the approval process gave communities enough information, time, and influence.</p></div>
+      </div>
+      <div class="featured-image"><<img src="utah_image.avif" alt="Data Center"></div>
+      <div class="video-wrapper">
+  <iframe
+    src="https://www.youtube.com/embed/13u9LkIIp_A"
+    title="Hundreds of protesters gather at Utah Capitol building to protest proposed data center"
+    frameborder="0"
+    allowfullscreen>
+  </iframe>
+</div>
+    </section>
+
+    <section class="action-section fade-in">
+      <h2>From Anxiety to Action</h2>
+      <p>Communities do not have to respond to data center proposals alone. Public meetings, zoning hearings, environmental reviews, petitions, and direct contact with representatives can all become ways to transform anxiety into accountability.</p>
+      <div class="action-grid">
+        <div class="action-card"><h3>1. Check local agendas</h3><p>Look for city council, county commission, planning commission, and zoning board meetings.</p></div>
+        <div class="action-card"><h3>2. Ask for documents</h3><p>Request environmental reviews, water-rights applications, power agreements, traffic studies, and zoning files.</p></div>
+        <div class="action-card"><h3>3. Submit public comments</h3><p>Written comments create a public record and can influence permitting and approval decisions.</p></div>
+        <div class="action-card"><h3>4. Contact representatives</h3><p>State and local officials may influence zoning, utility regulation, environmental review, and public transparency.</p></div>
+      </div>
+      <div class="resource-grid">
+        <a class="resource-card" href="https://www.house.gov/representatives/find-your-representative" target="_blank" rel="noopener noreferrer"><h3>Find Your U.S. House Representative</h3><p>Look up your congressional district and contact your representative.</p></a>
+        <a class="resource-card" href="https://www.senate.gov/senators/senators-contact.htm" target="_blank" rel="noopener noreferrer"><h3>Contact Your Senators</h3><p>Find contact information for your two U.S. senators.</p></a>
+        <a class="resource-card" href="https://www.usa.gov/state-governor" target="_blank" rel="noopener noreferrer"><h3>Contact Your Governor</h3><p>Find your state governor and contact information.</p></a>
+        <a class="resource-card" href="https://www.fractracker.org/data-centers/" target="_blank" rel="noopener noreferrer"><h3>Explore Data Center Data</h3><p>Review FracTracker’s U.S. data center tracker.</p></a>
+        <a class="resource-card" href="https://www.wri.org/initiatives/aqueduct" target="_blank" rel="noopener noreferrer"><h3>Understand Water Risk</h3><p>Use WRI Aqueduct to explore water stress and water risk.</p></a>
+        <a class="resource-card" href="https://www.epa.gov/nepa" target="_blank" rel="noopener noreferrer"><h3>Learn About Environmental Review</h3><p>Understand how environmental review processes work.</p></a>
+      </div>
+    </section>
+
+    <section class="reflection-section fade-in">
+      <h2>Reflection: What the maps cannot show alone</h2>
+      <p>The maps show where data centers exist and where communities have publicly responded, but they cannot fully capture what it feels like to live near a proposed project or to learn that invisible digital systems depend on visible environmental tradeoffs. This is where climate anxiety becomes more than an individual feeling. It becomes a response to uncertainty, lack of transparency, and the fear that decisions about water, land, energy, and health are being made without meaningful public participation.</p>
+      <p>By combining data, community responses, direct voices, and action resources, this project argues that anxiety can become a starting point for accountability. The goal is not only to make AI infrastructure visible, but to help people ask who benefits, who bears the risks, and how communities can participate in shaping the future of the technologies they are asked to live with.</p>
+    </section>
+  </main>
+
+  <footer><p>The Hidden Geography of AI — Climate Anxiety Creative Project by Firdaus Thalib</p></footer>
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/papaparse@5.4.1/papaparse.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
